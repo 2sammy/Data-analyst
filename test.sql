@@ -19,7 +19,7 @@ SELECT
 FROM job_postings_fact
 
 --Limit keyword
-- it's used only to querry a certain amount of rows
+--its used only to querry a certain amount of rows
 
 SELECT
  job_id,
@@ -48,3 +48,26 @@ Limit 10
 FROM job_postings_fact
 WHERE job_title = 'Data Analyst'
 Limit 10
+
+--ORDER BY keyword
+    sorting rows
+
+SELECT 
+ job_id,
+ job_title,
+ job_location
+FROM job_postings_fact
+WHERE job_title = 'Data Analyst'
+ORDER BY job_title
+Limit 10
+
+SELECT 
+ job_id,
+ job_title_short,
+ job_location,
+ job_via,salary_year_avg
+FROM job_postings_fact
+where job_title_short = 'Data Engineer'
+ORDER BY job_location asc
+
+
