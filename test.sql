@@ -50,7 +50,7 @@ WHERE job_title = 'Data Analyst'
 Limit 10
 
 --ORDER BY keyword
-    sorting rows
+    --sorting rows
 
 SELECT 
  job_id,
