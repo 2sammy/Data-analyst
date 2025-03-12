@@ -115,17 +115,51 @@ used because you cant use aggregate functions in where
 */
 
 select
-    COUNT(job_title_short) AS job_count
+    COUNT(job_title_short) AS job_count,
     job_title_short as jobs,
     AVG(salary_year_avg) as salary_avg,
     max(salary_year_avg) as salary_max,
-    min(salary_yesr_avg) as salary_min
+    min(salary_year_avg) as salary_min
 from
     job_postings_fact
 GROUP BY
     job_title_short
 HAVING
     COUNT (job_title_short) >100
-    
+
 ORDER BY salary_avg
+
+
+--PRACTICE
+
+SELECT
+    project_id,
+    project_id,
+    hours_rate AS rate_original,
+    SUM (hours_spent * hours_rate) AS project_original_cost
+   SUM (hours_rate *(hours_rate + 6)) project_projected_cost
+
+FROM    
+    invoices_fact
+
+GROUP BY 
+    project_id
+-- null values
+/* 
+this is afield with no value
+
+*/
+
+select
+    job_id,
+    job_title_short,
+    job_title
+    job_location,
+    job_via,
+    salary_year_avg
+FROM
+    job_postings_fact
+
+WHERE
+    salary_year_avg IS NULL
 
