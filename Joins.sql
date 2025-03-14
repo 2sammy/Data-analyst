@@ -27,3 +27,15 @@ FROM job_postings_fact AS job_postings
 RIGHT JOIN company_dim AS companies
 ON job_postings.company_id = companies.company_id
 
+/*
+Full order of execution
+    FROM/JOIN
+-specifies the tables to retrieve data from and to join them
+
+    where
+-Filters rows based on conditions
+
+
+
+*/
+

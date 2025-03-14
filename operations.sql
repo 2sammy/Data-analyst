@@ -49,6 +49,7 @@ ORDER BY
 
 --SUM
 -- gets the total of a columns
+-- adds together all values in aspecific column
 
 SELECT 
     SUM(salary_year_avg) AS salary_sum
@@ -56,6 +57,7 @@ FROM
     job_postings_fact
 
 --COUNT(*)
+--Counts the number of rows that match specific criterion
 --Gives the total number of rows in the table
 SELECT
     SUM(salary_year_avg) AS salary_sum
@@ -77,6 +79,7 @@ from
 
 --AVG(salary_year_avg)
 -- -average of the column
+--- calculates the average value of a numeric column
 
 select
     AVG(salary_year_avg) as salary_avg,
