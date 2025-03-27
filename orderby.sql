@@ -50,3 +50,26 @@ FROM
 ORDER BY occupation DESC -- the results will be arranged either asc or DESC
 
 ;
+-- HAVING
+/*
+he HAVING clause and the WHERE clause are both used to filter records in SQL, but they have key differences:
+
+WHERE is used to filter rows before aggregation.
+
+HAVING is used to filter aggregated results (groups).
+
+
+
+*/
+
+SELECT category, SUM(amount) AS total_sales
+FROM sales
+GROUP BY category
+HAVING SUM(amount) > 20;
+
+-- combination of having and where
+SELECT category, SUM(amount) AS total_sales
+FROM sales
+WHERE category = 'Fruit'
+GROUP BY category
+HAVING SUM(amount) > 20;
