@@ -62,3 +62,14 @@ SELECT *
 FROM employee_salary
 WHERE (birth_date > '2005-01-02' 
 AND age =20) OR age > 25
+
+--like statement
+-- used to find a certain pattern
+SELECT *
+FROM employee_salary
+--ends with year
+WHERE birth_date LIKE '2005%'
+--begins with year
+WHERE birth_date LIKE '%2005'
+--find exact 
+WHERE birth_date LIKE '%2005%'
