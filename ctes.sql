@@ -40,3 +40,4 @@ FROM CTE_Example
 JOIN CTE_Example2
     ON CTE_Example.employee_id = CTE_Example2.employee_id
 ;
+
