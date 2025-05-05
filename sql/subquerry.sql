@@ -65,3 +65,43 @@ where salary > (
  JOIN (select AVG(salary) sal FROM employee) avg_sal
     ON e.salry > avg_sal.sal
 
+--  multiple rows subquery
+-- subquery that returns multiple column and multiple rows
+-- subquery that retuns only 1 column and multiple rows
+/* Find the epmloyee who earn the highest salary in each department */
+-- start finding the highest salary in each department
+SELECT
+    dept_name, 
+    MAX(salary)
+FROM employee
+GROUP BY dept_name
+
+-- finding the employees from each department who earn more salary
+SELECT *
+FROM employee
+WHERE (dept_name, salary) in (
+    SELECT
+    dept_name, 
+    MAX(salary)
+FROM employee
+GROUP BY dept_name
+)
+
+--single column , multiple rows
+/* Finding department who do not have any employees */
+SELECT * 
+FROM department
+WHERE dept_name not in (
+    select DISTINCT dept_name 
+    FROM employee)
+
+--correlated subquery
+-- finding the employees in each department who earn more than the average salary in that department
+SELECT *
+FROM employee e1
+WHERE salary > (
+    select AVG(salary)
+    FROM employee e2
+    WHERE dept_name = e1.dept_name
+);
+
